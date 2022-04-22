@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
+@font-face {
+  font-family: "Hylia Serif";
+  src: url("./HyliaSerifBeta-Regular.otf");
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background: #ece6d9;
+}
+
+h1 {
+  font-family: "Hylia Serif", serif;
 }
