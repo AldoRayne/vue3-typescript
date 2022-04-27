@@ -1,5 +1,5 @@
 <template>
-  <div class="job-item">
+  <div class="job-item" @click="routeToJobDetails()">
     <h2>{{ job.title }} in {{ job.location }}</h2>
     <div class="salary">
       <img
@@ -26,6 +26,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
+import { useRouter } from "vue-router";
 
 import Job from "@/types/job";
 
@@ -38,7 +39,15 @@ export default defineComponent({
   },
 
   setup() {
-    return {};
+    const router = useRouter();
+
+    const routeToJobDetails = () => {
+      router.push({
+        name: "JobDetails",
+      });
+    };
+
+    return { routeToJobDetails };
   },
 });
 </script>

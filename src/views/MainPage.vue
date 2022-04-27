@@ -12,9 +12,9 @@
         <h1>Hyrule Jobs</h1>
       </div>
       <div class="order">
-        <button @click="handleClick('title')">Order by title</button>
-        <button @click="handleClick('salary')">Order by salary</button>
-        <button @click="handleClick('location')">Order by location</button>
+        <button @click="sortBy('title')">Order by title</button>
+        <button @click="sortBy('salary')">Order by salary</button>
+        <button @click="sortBy('location')">Order by location</button>
       </div>
     </header>
     <JobList :jobs="jobs" :order="order" />
@@ -66,11 +66,11 @@ export default defineComponent({
 
     const order = ref<OrderTerm>("title");
 
-    const handleClick = (term: OrderTerm) => {
+    const sortBy = (term: OrderTerm) => {
       order.value = term;
     };
 
-    return { jobs, handleClick, order };
+    return { jobs, sortBy, order };
   },
 });
 </script>

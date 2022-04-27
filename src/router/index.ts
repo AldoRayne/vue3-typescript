@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import MainPage from "../views/MainPage.vue";
-import JobDetails from "../views/JobDetails.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,7 +10,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/job-details",
     name: "JobDetails",
-    component: JobDetails,
+    component: () => import("../views/JobDetails.vue"),
   },
 ];
 
