@@ -2,7 +2,7 @@
   <div class="job-list">
     <p>Ordered by {{ order }}</p>
     <transition-group name="list" tag="ul">
-      <li v-for="job in orderedJobs" :key="job.id">
+      <li v-for="job in orderedJobs" :key="job.id" data-aos="zoom-in">
         <JobItem :job="job" />
       </li>
     </transition-group>
