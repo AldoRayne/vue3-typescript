@@ -33,6 +33,7 @@ export default defineComponent({
   components: {
     JobList,
   },
+
   setup() {
     const jobs = ref<Job[]>([
       {
@@ -97,8 +98,5 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-}
-h1 {
-  font-size: 3em;
 }
 </style>
