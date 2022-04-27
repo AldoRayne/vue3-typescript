@@ -41,7 +41,7 @@ export default defineComponent({
   setup(props) {
     const router = useRouter();
 
-    function routeToJobDetails() {
+    function routeToJobDetails(): void {
       const linkFormat: string = props.job.title
         .replace(/ /g, "-")
         .toLowerCase();
