@@ -38,14 +38,21 @@ export default defineComponent({
     },
   },
 
-  setup() {
+  setup(props) {
     const router = useRouter();
 
-    const routeToJobDetails = () => {
+    function routeToJobDetails() {
+      const linkFormat: string = props.job.title
+        .replace(/ /g, "-")
+        .toLowerCase();
+
       router.push({
         name: "JobDetails",
+        params: {
+          job: linkFormat,
+        },
       });
-    };
+    }
 
     return { routeToJobDetails };
   },
@@ -54,6 +61,7 @@ export default defineComponent({
 
 <style scoped>
 .job-item {
+  padding: 16px;
   cursor: pointer;
 }
 .salary {

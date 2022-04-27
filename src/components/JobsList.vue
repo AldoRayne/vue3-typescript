@@ -2,7 +2,7 @@
   <div class="job-list">
     <p>Ordered by {{ order }}</p>
     <transition-group name="list" tag="ul">
-      <li v-for="job in orderedJobs" :key="job.id" data-aos="zoom-in">
+      <li v-for="job in orderedJobs" :key="job.id" data-aos="flip-left">
         <JobItem :job="job" />
       </li>
     </transition-group>
@@ -58,7 +58,6 @@ export default defineComponent({
 .job-list li {
   list-style-type: none;
   background: white;
-  padding: 16px;
   margin: 16px 0;
   border-radius: 4px;
 }
