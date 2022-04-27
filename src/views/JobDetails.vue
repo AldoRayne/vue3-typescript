@@ -1,15 +1,17 @@
 <template>
-  <MainPage />
+  <div>Job Details</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import MainPage from "@/views/MainPage.vue";
-
 export default defineComponent({
-  components: {
-    MainPage,
+  name: "JobDetails",
+
+  setup() {
+    return {};
   },
 });
 </script>
+
+<style scoped></style>
