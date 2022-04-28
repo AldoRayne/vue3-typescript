@@ -1,15 +1,26 @@
 <template>
-  <div>Job Details</div>
+  <div>{{ users }}</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, computed } from "vue";
+import { useStore } from "vuex";
 
 export default defineComponent({
   name: "JobDetails",
 
   setup() {
-    return {};
+    const store = useStore();
+
+    onMounted(() => {
+      store.dispatch("updateUsers");
+    });
+
+    const users = computed(() => {
+      return store.getters.users;
+    });
+
+    return { users };
   },
 });
 </script>

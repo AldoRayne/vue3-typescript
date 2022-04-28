@@ -66,9 +66,9 @@ export default defineComponent({
 
     const order = ref<OrderTerm>("title");
 
-    const sortBy = (term: OrderTerm): void => {
+    function sortBy(term: OrderTerm): void {
       order.value = term;
-    };
+    }
 
     return { jobs, order, sortBy };
   },
