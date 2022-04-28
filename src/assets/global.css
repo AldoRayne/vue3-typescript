@@ -3,6 +3,7 @@
 @font-face {
   font-family: "Hylia Serif";
   src: url("./HyliaSerifBeta-Regular.otf");
+  font-display: swap;
 }
 
 body {
