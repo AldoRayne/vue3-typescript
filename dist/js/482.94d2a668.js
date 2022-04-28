@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkvue_typescript"]=self["webpackChunkvue_typescript"]||[]).push([[482],{6482:function(e,t,n){n.r(t),n.d(t,{default:function(){return c}});var r=n(3396);function u(e,t,n,u,s,a){return(0,r.wg)(),(0,r.iD)("div",null,"Job Details")}var s=(0,r.aZ)({name:"JobDetails",setup(){return{}}}),a=n(89);const i=(0,a.Z)(s,[["render",u]]);var c=i}}]);
-//# sourceMappingURL=482.94d2a668.js.map
