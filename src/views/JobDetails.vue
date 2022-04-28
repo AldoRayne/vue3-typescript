@@ -27,7 +27,7 @@ export default defineComponent({
   setup() {
     const store = useStore();
 
-    onMounted(() => {
+    onMounted((): void => {
       store.dispatch("getUsers");
     });
 
