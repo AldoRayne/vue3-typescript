@@ -30,8 +30,6 @@ import Job from "@/types/job";
 import OrderTerm from "@/types/orderTerm";
 
 export default defineComponent({
-  name: "MainPage",
-
   components: {
     JobList,
   },

@@ -22,8 +22,6 @@ import { defineComponent, onMounted, computed } from "vue";
 import { useStore } from "vuex";
 
 export default defineComponent({
-  name: "JobDetails",
-
   setup() {
     const store = useStore();
 
