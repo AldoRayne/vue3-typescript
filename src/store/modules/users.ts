@@ -9,13 +9,13 @@ export default {
     users: [] as Users[],
   },
   getters: {
-    users: (state: { value: Users[] }) => {
-      return state.value;
+    users: (state: { users: Users[] }) => {
+      return state.users;
     },
   },
   mutations: {
-    getUsers(state: { value: Users[] }, payload: Users[]) {
-      state.value = payload;
+    getUsers(state: { users: Users[] }, payload: Users[]) {
+      state.users = payload;
     },
   },
   actions: {

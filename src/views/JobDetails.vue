@@ -1,5 +1,11 @@
 <template>
   <div>
+    <PageHeader>
+      <template v-slot:title>Job Details</template>
+      <template v-slot:buttons>
+        <MainButton @click="routeToMainPage()">To Main Page</MainButton>
+      </template>
+    </PageHeader>
     <transition-group tag="ul" class="user-list">
       <li
         v-for="(user, index) in users"
@@ -16,17 +22,32 @@
 </template>
 
 <script lang="ts">
-import Users from "@/types/users";
-
 import { defineComponent, onMounted, computed } from "vue";
 import { useStore } from "vuex";
+import { useRoute, useRouter } from "vue-router";
+
+import PageHeader from "@/components/ui/PageHeader.vue";
+import MainButton from "@/components/ui/MainButton.vue";
+
+import Users from "@/types/users";
 
 export default defineComponent({
+  components: {
+    PageHeader,
+    MainButton,
+  },
+
   setup() {
     const store = useStore();
+    const router = useRouter();
+    const route = useRoute();
 
     onMounted((): void => {
       store.dispatch("getUsers");
+    });
+
+    const title = computed(() => {
+      return route.params.job;
     });
 
     const users = computed<Users[]>(() => {
@@ -39,7 +60,13 @@ export default defineComponent({
       return isEven;
     };
 
-    return { users, aosParity };
+    function routeToMainPage(): void {
+      router.push({
+        name: "MainPage",
+      });
+    }
+
+    return { users, aosParity, routeToMainPage };
   },
 });
 </script>

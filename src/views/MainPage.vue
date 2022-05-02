@@ -1,22 +1,13 @@
 <template>
   <div>
-    <header>
-      <div class="title">
-        <img
-          src="@/assets/heart.svg"
-          width="60"
-          height="64"
-          loading="lazy"
-          alt="site logo"
-        />
-        <h1>Hyrule Jobs</h1>
-      </div>
-      <div class="order">
-        <button @click="sortBy('title')">Order by title</button>
-        <button @click="sortBy('salary')">Order by salary</button>
-        <button @click="sortBy('location')">Order by location</button>
-      </div>
-    </header>
+    <PageHeader>
+      <template v-slot:title>Hyrule Jobs</template>
+      <template v-slot:buttons>
+        <MainButton @click="sortBy('title')">Order by title</MainButton>
+        <MainButton @click="sortBy('salary')">Order by salary</MainButton>
+        <MainButton @click="sortBy('location')">Order by location</MainButton>
+      </template>
+    </PageHeader>
     <JobList :jobs="jobs" :order="order" />
   </div>
 </template>
@@ -26,12 +17,17 @@ import { defineComponent, ref } from "vue";
 
 import JobList from "@/components/JobsList.vue";
 
+import PageHeader from "@/components/ui/PageHeader.vue";
+import MainButton from "@/components/ui/MainButton.vue";
+
 import Job from "@/types/job";
 import OrderTerm from "@/types/orderTerm";
 
 export default defineComponent({
   components: {
     JobList,
+    PageHeader,
+    MainButton,
   },
 
   setup() {
@@ -72,31 +68,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-header {
-  text-align: center;
-}
-header .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header img {
-  width: 60px;
-  margin-right: 20px;
-}
-header .order {
-  margin-top: 20px;
-}
-button {
-  margin: 0 10px;
-  color: #1195c9;
-  border: 3px solid #1195c9;
-  background: #d5f0ff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-</style>
